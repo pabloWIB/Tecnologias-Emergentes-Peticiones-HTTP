@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:9000/api';
+const BASE_URL = import.meta.env.VITE_API_URL ?? '/api';
 
 export class ApiError extends Error {
   constructor(message, status, detail) {
@@ -37,3 +37,6 @@ export const api = {
   update: (resource, id, body) => request(`/${resource}/${id}`, { method: 'PUT', body }),
   remove: (resource, id) => request(`/${resource}/${id}`, { method: 'DELETE' })
 };
+
+export const errorText = (error) =>
+  typeof error?.detail?.message === 'string' ? error.detail.message : 'Check your connection and try again.';

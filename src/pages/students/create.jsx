@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Stack } from '@mui/material';
 
-import { api } from 'api/cliente';
+import { api, errorText } from 'api/cliente';
 import InlineAlert from 'components/InlineAlert';
 import StudentForm from './components/StudentForm';
 
@@ -21,14 +21,14 @@ export default function CreateStudent() {
       navigate('/students', { state: { message: `${body.name} ${body.lastName} was created` } });
     } catch (err) {
       console.error(err);
-      setError(true);
+      setError(errorText(err));
       setSaving(false);
     }
   };
 
   return (
     <Stack spacing={2}>
-      {error && <InlineAlert type="bad" title="It was not saved." text="Check your connection and try again." />}
+      {error && <InlineAlert type="bad" title="It was not saved." text={error} />}
       <StudentForm saving={saving} onSubmit={handleSubmit} />
     </Stack>
   );

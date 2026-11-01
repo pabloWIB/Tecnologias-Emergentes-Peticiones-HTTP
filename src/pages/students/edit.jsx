@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { LinearProgress, Stack } from '@mui/material';
 
-import { api } from 'api/cliente';
+import { api, errorText } from 'api/cliente';
 import InlineAlert from 'components/InlineAlert';
 import NotFound from 'pages/NotFound';
 import StudentForm from './components/StudentForm';
 
 import { useNavigate, useParams } from 'react-router';
 
-const isInvalidId = (error) => error?.detail?.message?.name === 'CastError';
+const isInvalidId = (error) => error?.status === 404;
 
 export default function EditStudent() {
   const { studentId } = useParams();
@@ -48,7 +48,7 @@ export default function EditStudent() {
       navigate('/students', { state: { message: `${body.name} ${body.lastName} was updated` } });
     } catch (err) {
       console.error(err);
-      setError(true);
+      setError(errorText(err));
       setSaving(false);
     }
   };
@@ -80,7 +80,7 @@ export default function EditStudent() {
 
   return (
     <Stack spacing={2}>
-      {error && <InlineAlert type="bad" title="The changes were not saved." text="Check your connection and try again." />}
+      {error && <InlineAlert type="bad" title="The changes were not saved." text={error} />}
       <StudentForm initialValues={student} submitLabel="Edit" saving={saving} onSubmit={handleSubmit} />
     </Stack>
   );
