@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var raiz = document.documentElement, pref = '';
+        try {
+          var g = localStorage.getItem('te_tema');
+          if (g === 'claro' || g === 'oscuro') { pref = g; }
+        } catch (e) {}
+        var oscuro = pref === 'oscuro';
+        raiz.setAttribute('data-tema', oscuro ? 'oscuro' : 'claro');
+        if (pref) { raiz.setAttribute('data-tema-pref', pref); }
+      })();
+    </script>
+    <style>
+      :root[data-tema='claro'] { color-scheme: light; background: #f4f5f6; }
+      :root[data-tema='oscuro'] { color-scheme: dark; background: #101216; }
+    </style>
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0958d9" />
+    <title>T. Emergentes | Panel administrativo</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <noscript>Se necesita JavaScript para usar esta aplicación.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/index.jsx"></script>
+  </body>
+</html>

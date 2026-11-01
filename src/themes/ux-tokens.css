@@ -1,0 +1,73 @@
+:root {
+	--ux-acento:        #0958d9;
+	--ux-acento-texto:  #0958d9;
+	--ux-acento-fuerte: #003eb3;
+	--ux-acento-12:     rgba(9, 88, 217, .10);
+	--ux-acento-14:     rgba(9, 88, 217, .14);
+	--ux-sobre-acento:  #fff;
+	--ux-borrar:        #b4283b;
+	--ux-fuente: 'Public Sans', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+	--ux-menu-ancho:  248px;
+	--ux-menu-carril: 68px;
+	--ux-menu-movil:  100%;
+	--ux-barra-alto:  64px;
+	--ux-movil-alto:  56px;
+	--ux-radio:       10px;
+	--ux-radio-tarjeta: 16px;
+
+	--ux-texto:       #1a1a1a;
+	--ux-texto-medio: #4a4a4a;
+	--ux-apagado:     #6f7276;
+	--ux-borde:       #e5e7eb;
+	--ux-hover:       #f9fafb;
+	--ux-superficie:  #f4f5f6;
+	--ux-panel:       #fff;
+	--ux-linea:       #f1f3f5;
+	--ux-barra-scroll:#d5d8dc;
+	--ux-off:         #c9ced4;
+	--ux-velo:        rgba(0, 0, 0, .42);
+	--ux-campo-bg:    #f9fafb;
+	--ux-campo-borde: #868b92;
+	--ux-sombra-capa: 0 8px 28px rgba(16, 24, 40, .12);
+
+	--ux-bien-bg:  rgba(47, 183, 164, .12);  --ux-bien-tx:  #17796d;
+	--ux-aviso-bg: rgba(255, 194, 74, .20);  --ux-aviso-tx: #8a5a00;
+	--ux-mal-bg:   rgba(245, 69, 92, .12);   --ux-mal-tx:   #b4283b;
+	--ux-salir-bg: rgba(245, 69, 92, .10);   --ux-salir-tx: #b4283b;
+	--ux-globo:    #c62828;
+	--ux-toast-bg: #1f2937;  --ux-toast-tx: #fff;
+
+	--ux-video-fondo:   #101216;
+	--ux-video-texto:   #e8eaed;
+	--ux-video-apagado: #b9bec6;
+	--ux-video-borde:   #2b3038;
+	--ux-video-boton:   #0d1114;
+}
+
+:root[data-tema="claro"]  { color-scheme: light; }
+:root[data-tema="oscuro"] { color-scheme: dark; }
+
+:root[data-tema="oscuro"] {
+	--ux-acento-texto: #69b1ff;
+
+	--ux-texto:       #e8eaed;
+	--ux-texto-medio: #c3c7ce;
+	--ux-apagado:     #9aa1ab;
+	--ux-borde:       #2b3038;
+	--ux-hover:       #23272e;
+	--ux-superficie:  #101216;
+	--ux-panel:       #1b1e24;
+	--ux-linea:       #262a31;
+	--ux-barra-scroll:#3a4049;
+	--ux-off:         #565d67;
+	--ux-velo:        rgba(0, 0, 0, .62);
+	--ux-campo-bg:    #23272e;
+	--ux-campo-borde: #737a86;
+	--ux-sombra-capa: 0 8px 28px rgba(0, 0, 0, .55);
+
+	--ux-bien-bg:  rgba(43, 227, 198, .16);  --ux-bien-tx:  #7defd9;
+	--ux-aviso-bg: rgba(252, 211, 77, .16);  --ux-aviso-tx: #fcd34d;
+	--ux-mal-bg:   rgba(251, 113, 133, .16); --ux-mal-tx:   #ff8a97;
+	--ux-salir-bg: rgba(245, 69, 92, .16);   --ux-salir-tx: #ff8a97;
+}
